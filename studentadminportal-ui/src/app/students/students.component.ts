@@ -19,7 +19,8 @@ export class StudentsComponent implements OnInit {
     'dateOfBirth',
     'email',
     'mobile',    
-    'gender'];
+    'gender',
+    'edit'];
     dataSource : MatTableDataSource<Student> = new MatTableDataSource<Student>();
     @ViewChild(MatPaginator) matPaginator!:MatPaginator;
     @ViewChild(MatSort) matSort!:MatSort;
@@ -30,7 +31,7 @@ export class StudentsComponent implements OnInit {
 
   constructor(private Studentservice:StudentService){}
   ngOnInit():void{
-    this.Studentservice.getStudent().subscribe(
+    this.Studentservice.getStudents().subscribe(
       (successResponse) => {
         this.students = successResponse;
         this.dataSource = new MatTableDataSource<Student>(this.students);
