@@ -55,4 +55,8 @@ export class StudentsComponent implements OnInit {
     this.dataSource.filter = this.filterString.trim().toLowerCase();
   }
 
+  onDelete():void{
+    
+  }
+
 }

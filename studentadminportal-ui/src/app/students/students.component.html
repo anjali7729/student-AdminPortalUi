@@ -7,6 +7,7 @@
   <div class="row end-xs">
     <div class="col-xs-12">
       <input type="text" class="search-input" placeholder="Search Student" [(ngModel)] = "filterString" (keyup)="filterStudents()">
+      <a routerLink="/student/add" mat-raised-button color="primary" class="ml-1">Add New Student</a>
     </div>
   </div>
 </div>
@@ -63,7 +64,7 @@
               </td>
             </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>    
           <mat-paginator [length]="100"
